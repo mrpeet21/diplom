@@ -264,9 +264,7 @@ if __name__ == "__main__":
     
     optimizer = torch.optim.AdamW([{'params': train.model.parameters(), 'lr': 5e-4}])
     train.fit(train_data_loader, 100, optimizer)
-    #scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=10)
-    #train.model.load_state_dict(torch.load('ckpt_400/model_UNET_150.pt', weights_only=False))
-    #train.model.eval()
+
     
     optimizer = torch.optim.AdamW([{'params': train.model.parameters(), 'lr': 1e-4}])
     train.fit(train_data_loader, 100, optimizer)
@@ -278,12 +276,5 @@ if __name__ == "__main__":
     optimizer = torch.optim.AdamW([{'params': train.model.parameters(), 'lr': 1e-5}])
     train.fit(train_data_loader, 100, optimizer)
 
-    #optimizer = torch.optim.AdamW([{'params': train.model.parameters(), 'lr': 1e-4}])
-    
 
-    """optimizer = torch.optim.AdamW([{'params': train.model.parameters(), 'lr': 5e-5}])
-    train.fit(train_data_loader, 100, optimizer)
-
-    optimizer = torch.optim.AdamW([{'params': train.model.parameters(), 'lr': 1e-5}])
-    train.fit(train_data_loader, 100, optimizer)"""
     
